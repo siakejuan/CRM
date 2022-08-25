@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Phonebook</title>
 
 <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/style.css" />
@@ -18,12 +18,12 @@
 
 	<div id="wrapper">
 		<div id="header">
-			<h2>CRM - Customer Relationship Manager</h2>
+			<h2>Contact List</h2>
 		</div>
 	</div>
 
 	<div id="container">
-		<h3>Save Customer</h3>
+		<h3>Save Contact</h3>
 
 		<form:form action="saveCustomer" modelAttribute="customer"
 			method="POST">
@@ -48,6 +48,11 @@
 					<tr>
 						<td><label>Email: </label></td>
 						<td><form:input path="email" /></td>
+					</tr>
+
+					<tr>
+						<td><label>Phone: </label></td>
+						<td><form:input path="phone" /></td>
 					</tr>
 
 					<tr>

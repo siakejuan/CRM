@@ -1,4 +1,4 @@
-package com.hibernate.test;
+package com.hibernate.database;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,14 +13,14 @@ import java.sql.*;
 /**
  * Servlet implementation class TestDatabase
  */
-@WebServlet("/TestDatabase")
-public class TestDatabase extends HttpServlet {
+@WebServlet("/database")
+public class Database extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Default constructor.
 	 */
-	public TestDatabase() {
+	public Database() {
 	}
 
 	/**
@@ -30,14 +30,14 @@ public class TestDatabase extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// setup connection variables
-		String url = "jdbc:mysql://localhost:3306/web_customer_tracker?useSSL=false";
+		String url = "jdbc:mysql://localhost:3306/crm?useSSL=false";
 		String user = "root";
-		String password = "password";
+		String password = "root";
 		String driver = "com.mysql.jdbc.Driver";
 		 
 		// get connection to database
+		PrintWriter out = response.getWriter();
 		try {
-			PrintWriter out = response.getWriter();
 			
 			out.println("Connecting to database: " + url);
 			
@@ -49,6 +49,7 @@ public class TestDatabase extends HttpServlet {
 
 			myConnection.close();
 		} catch (Exception e) {
+			out.println("connection failed.");
 			e.printStackTrace();
 		}
 	}

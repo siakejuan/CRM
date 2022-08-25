@@ -2,6 +2,8 @@ package com.hibernate.entity;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.ColumnDefault;
+
 @Entity
 @Table(name="customer")
 public class Customer {
@@ -20,6 +22,9 @@ public class Customer {
 	@Column(name="email")
 	private String email;
 	
+	@Column(name="phone")
+	private long phone;
+	
 	// constructors 
 	public Customer() {}
 
@@ -28,8 +33,25 @@ public class Customer {
 		this.lastName = lastName;
 		this.email = email;
 	}
+	
+	public Customer(int id, String firstName, String lastName, String email, long phone) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.phone = phone;
+	}
 
 	// getters/setters
+	public long getPhone() {
+		return phone;
+	}
+	
+	public void setPhone(long phone) {
+		this.phone = phone;
+	}
+	
 	public int getId() {
 		return id;
 	}
