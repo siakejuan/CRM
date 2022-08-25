@@ -1,9 +1,9 @@
 A simple phonebook to store contacts
 
 To start:
-1. create table in MySQL. (Refer bottom)
-2. start application in Tomcat. 
-
+1. Create table in MySQL. (Refer bottom)
+2. Start application in Tomcat. 
+3. Go to http://localhost:8080/crm/customer/list
 
 Create database and tables in MySQL
 Implement the following script

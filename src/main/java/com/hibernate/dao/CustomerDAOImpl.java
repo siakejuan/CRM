@@ -30,18 +30,18 @@ public class CustomerDAOImpl implements CustomerDAO {
 		String theFieldName = null;
 
 		switch (theSortField) {
-			case SortUtils.FIRST_NAME:
-				theFieldName = "firstName";
-				break;
-			case SortUtils.LAST_NAME:
-				theFieldName = "lastName";
-				break;
-			case SortUtils.EMAIL:
-				theFieldName = "email";
-				break;
-			default:
-				// if nothing matches
-				theFieldName = "lastName";
+		case SortUtils.FIRST_NAME:
+			theFieldName = "firstName";
+			break;
+		case SortUtils.LAST_NAME:
+			theFieldName = "lastName";
+			break;
+		case SortUtils.EMAIL:
+			theFieldName = "email";
+			break;
+		default:
+			// if nothing matches
+			theFieldName = "lastName";
 		}
 		// create query
 		Query<Customer> theQuery = currentSession.createQuery("from Customer order by " + theFieldName, Customer.class);

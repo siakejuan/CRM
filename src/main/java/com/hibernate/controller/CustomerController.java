@@ -25,18 +25,18 @@ public class CustomerController {
 
 //	@RequestMapping("/list")
 	@GetMapping("/list")
-	public String listCustomers(Model theModel, @RequestParam(required=false) String sort) {
+	public String listCustomers(Model theModel, @RequestParam(required = false) String sort) {
 
 		// get customers from DAO
 		System.out.println("getting customers...");
-		
+
 		List<Customer> theCustomers = null;
-		
-		if(sort!=null) {
+
+		if (sort != null) {
 			int theSortField = Integer.parseInt(sort);
 			theCustomers = customerService.getCustomers(theSortField);
 		} else {
-			// no sort field provided 
+			// no sort field provided
 			theCustomers = customerService.getCustomers(SortUtils.LAST_NAME);
 		}
 

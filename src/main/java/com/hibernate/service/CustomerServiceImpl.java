@@ -13,23 +13,23 @@ import com.hibernate.entity.Customer;
 public class CustomerServiceImpl implements CustomerService {
 
 	// inject DAO (data access object)
-	@Autowired 
+	@Autowired
 	private CustomerDAO customerDAO;
-	
+
 	@Override
 	@Transactional
 	public List<Customer> getCustomers(int theSortField) {
 		List<Customer> theCustomers = customerDAO.getCustomers(theSortField);
-		
+
 		return theCustomers;
-	
+
 	}
 
 	@Override
 	@Transactional
 	public void saveCustomer(Customer theCustomer) {
 		customerDAO.saveCustomer(theCustomer);
-		
+
 	}
 
 	@Override
@@ -50,6 +50,5 @@ public class CustomerServiceImpl implements CustomerService {
 
 		return customerDAO.searchCustomers(theSearchName);
 	}
-
 
 }

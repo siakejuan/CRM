@@ -34,15 +34,15 @@ public class Database extends HttpServlet {
 		String user = "root";
 		String password = "root";
 		String driver = "com.mysql.jdbc.Driver";
-		 
+
 		// get connection to database
 		PrintWriter out = response.getWriter();
 		try {
-			
+
 			out.println("Connecting to database: " + url);
-			
+
 			Class.forName(driver);
-			
+
 			Connection myConnection = DriverManager.getConnection(url, user, password);
 
 			out.println("Connection success");
